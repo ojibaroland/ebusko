@@ -1,0 +1,55 @@
+Using the information i will provide build me a very professional website for my client called Ebuka Ojiba.  Make it super attractive. CAREER GOAL
+As a dedicated Full-Stack Development professional, I am eager to contribute my expertise to a dynamic team focused on mission-critical systems. With a robust foundation in C#, jQuery, Angular, Ionic, Docker and Azure DevOps, I am excited to leverage my skills and experience as a software Developer to support in resolving complex challenges.
+
+CORE COMPETENCIES
+
+JavaScript, TypeScript, Python programming
+C#, ASP.NET MVC, .NET Core, .NET Framework
+React, React Native, Vue, Angular, Ionic 
+MySQL, SQL, DB2
+xUnit, NUnit, MSTest, Selenium
+Hangfire, Window Service, Sitecore
+Figma, JSS
+Bootstrap, Sass, Tailwind, Bulma
+Microsoft Office Suite: (Word, Excel, PowerPoint)
+Docker, Azure, AWS
+
+
+EDUCATION
+CLEVELAND CODES SOFTWARE DEVELOPERS ACADEMY 		                  2022
+Cuyahoga Community College
+
+BACHELOR OF CHEMICAL ENGINEERING 						      2015 – 2018 
+Texas A&M University, Kingsville
+
+COMPTIA SECUREPATH CYBERSECURITY BOOTCAMP 		                               2024
+Cuyahoga Community College
+
+EXPERIENCE
+software Developer	2024 - Present
+Medical Mutual of Ohio
+Build services to automate and improve existing processes.
+Consistently improved documentation of technical workflows and participated in code reviews.
+Solve complex problems on multiple applications and technologies.
+Assist peers and senior level colleagues to resolve issues and meet deadlines.
+JunioR software Developer	2023 - 2024
+Interapt – APPRENTICESHIP at Medical Mutual of Ohio
+Researched and utilized multithreading to optimize an automated process from 15hrs to 4hrs.
+Redesigned windows processes with C# and .Net Framework to automate a labor-intensive process.
+Developed documentation of technical workflows and participated in code reviews.
+Utilized Kanban process to fix identified bugs, ensuring the reliability of software applications.
+Supported development and maintenance of new and existing .Net applications.
+
+Website developer	2018 - 2023
+Kiri Chic
+Coordinated with sales team and leadership to design and build a new ecommerce website.
+Customized website features using JavaScript, CSS, and HTML on the Shopify platform.
+Supported the team through debugging and maintaining web product pages.
+
+VOLUNTEERING	
+Bridge to IT Community Roadshow.
+Vehicle loading at Greater Cleveland Food Bank Distribution.
+The City Mission – Crossroads Men Crisis Center.
+Ushering service at Sacred Heart.
+
+Email: ojibaebuka@yahoo.com
