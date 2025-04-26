@@ -1,0 +1,29 @@
+The above error occurred in the <ForwardRef(Canvas)> component:
+
+    at Canvas (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-GZQHIXDO.js?v=c5dffbb0:48006:3)
+    at FiberProvider (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-GZQHIXDO.js?v=c5dffbb0:47862:21)
+    at CanvasWrapper
+    at div
+    at div
+    at MotionComponent (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/framer-motion.js?v=c5dffbb0:945:40)
+    at div
+    at div
+    at section
+    at Hero (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/src/components/Hero.tsx:62:37)
+    at main
+    at div
+    at LayoutContent (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/src/components/Layout.tsx?t=1745686907559:23:26)
+    at div
+    at SmoothScrollProvider (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/src/components/SmoothScrollContext.tsx?t=1745686907559:26:40)
+    at Layout (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/src/components/Layout.tsx?t=1745686907559:114:34)
+    at Home (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/src/pages/Home.tsx?t=1745686907559:29:3)
+    at Route (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=c5dffbb0:191:16)
+    at Switch (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=c5dffbb0:247:17)
+    at QueryClientProvider (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=c5dffbb0:2805:3)
+    at App
+    at Provider (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-532U4VYK.js?v=c5dffbb0:72:15)
+    at TooltipProvider (https://88e46a65-bd09-404d-b130-86893ea72d18-00-3fp9fwmi91rby.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=c5dffbb0:2247:5)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+Cannot read properties of undefined (reading 'replit')

@@ -1,13 +1,7 @@
 import { motion } from "framer-motion";
 import { downloadResume } from "@/lib/resume";
-import { useEffect, useState } from "react";
 
 export default function Hero() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   return (
     <section
@@ -86,17 +80,16 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            {/* 3D animated background */}
-            {isMounted && (
-              <div className="absolute w-80 h-80 z-0 opacity-40">
-                <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-                  <ambientLight intensity={0.5} />
-                  <directionalLight position={[10, 10, 10]} intensity={1} />
-                  <AnimatedSphere />
-                  <OrbitControls enableZoom={false} autoRotate />
-                </Canvas>
-              </div>
-            )}
+            {/* Background with animated gradient */}
+            <div className="absolute w-full h-full top-0 left-0 z-0 opacity-20 rounded-full overflow-hidden">
+              <div 
+                className="w-full h-full bg-gradient-to-r from-blue-400 to-blue-600 animate-pulse"
+                style={{ 
+                  animation: "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                  borderRadius: "50%"
+                }}
+              />
+            </div>
             
             {/* Profile image */}
             <div className="relative z-10">

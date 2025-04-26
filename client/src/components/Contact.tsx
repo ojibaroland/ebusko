@@ -49,8 +49,7 @@ export default function Contact() {
       
       toast({
         title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-        variant: "success"
+        description: "Thank you for reaching out. I'll get back to you soon."
       });
       
       // Reset form
