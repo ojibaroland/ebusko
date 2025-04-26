@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export default function About() {
   return (
@@ -25,13 +26,13 @@ export default function About() {
           >
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1581092921461-eab62e97a2bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&h=500&q=80"
+                src="/assets/images/code-workspace.jpg"
                 alt="Modern workspace"
                 className="rounded-lg shadow-xl w-full"
               />
               <div className="absolute -bottom-6 -right-6 bg-white p-3 rounded-lg shadow-lg hidden lg:block">
                 <img
-                  src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150&q=80"
+                  src="/assets/images/coding-close.jpg"
                   alt="Coding environment"
                   className="w-32 h-32 object-cover rounded-md"
                 />
@@ -80,7 +81,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-8">
               <div>
                 <p className="text-gray-500 font-medium">Email</p>
                 <p className="font-medium">ojibaebuka@yahoo.com</p>
@@ -98,6 +99,15 @@ export default function About() {
                 <p className="font-medium">6+ years</p>
               </div>
             </div>
+            
+            <Link href="/about-details">
+              <button className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium">
+                <span>Learn More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </Link>
           </motion.div>
         </div>
       </div>
