@@ -82,7 +82,7 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600&q=80"
+              src="/assets/ebukaportfolioimage.jpg"
               alt="Ebuka Ojiba"
               className="rounded-full w-64 h-64 object-cover border-4 border-white shadow-2xl"
             />

@@ -36,11 +36,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Resume download endpoint
   app.get("/api/resume/download", (_req, res) => {
-    // In a real implementation, this would serve an actual PDF file
-    // For demo purposes, we're sending a placeholder response
-    res.setHeader('Content-Type', 'application/pdf');
-    res.setHeader('Content-Disposition', 'attachment; filename=Ebuka_Ojiba_Resume.pdf');
-    res.status(200).send("This would be a PDF file in a real implementation");
+    const filePath = "./public/assets/Ebuka's Resume.docx";
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+    res.setHeader('Content-Disposition', 'attachment; filename="Ebuka_Ojiba_Resume.docx"');
+    res.status(200).sendFile(filePath, { root: '.' });
   });
 
   const httpServer = createServer(app);
