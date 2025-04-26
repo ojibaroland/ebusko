@@ -51,7 +51,7 @@ export const SmoothScrollProvider = ({ children }: SmoothScrollProviderProps) =>
       });
 
       // Listen to scroll event
-      locomotiveScroll.on('scroll', (instance) => {
+      locomotiveScroll.on('scroll', (_instance: any) => {
         lastScrollTimeRef.current = Date.now();
         setIsScrolling(true);
       });

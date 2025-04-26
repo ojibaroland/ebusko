@@ -6,6 +6,7 @@ import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Volunteering from "@/components/Volunteering";
 import Contact from "@/components/Contact";
+import PageTransition from "@/components/PageTransition";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -23,13 +24,15 @@ export default function Home() {
 
   return (
     <Layout>
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Education />
-      <Volunteering />
-      <Contact />
+      <PageTransition>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Education />
+        <Volunteering />
+        <Contact />
+      </PageTransition>
     </Layout>
   );
 }
