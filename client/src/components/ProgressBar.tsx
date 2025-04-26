@@ -13,7 +13,10 @@ export default function ProgressBar({ name, percentage }: ProgressBarProps) {
   
   useEffect(() => {
     if (isInView) {
-      // Delay to make it visible after component enters viewport
+      // Use a timeout to allow the animation to play out
+      // before setting the width to the final percentage
+      // This is a simple way to create a delay for the animation
+      // You can adjust the timeout duration as needed
       const timer = setTimeout(() => {
         setWidth(percentage);
       }, 300);

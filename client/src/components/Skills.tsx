@@ -2,21 +2,21 @@ import { motion } from "framer-motion";
 import ProgressBar from "./ProgressBar";
 
 const programmingSkills = [
-  { name: "JavaScript/TypeScript", percentage: 90 },
+  { name: "JavaScript/TypeScript", percentage: 98 },
   { name: "C#/.NET", percentage: 85 },
-  { name: "Python", percentage: 75 },
+  { name: "Python", percentage: 89 },
 ];
 
 const frontendSkills = [
   { name: "React/React Native", percentage: 88 },
-  { name: "Angular/Ionic", percentage: 82 },
+  { name: "Angular/Ionic", percentage: 95 },
   { name: "CSS/Sass/Tailwind", percentage: 90 },
 ];
 
 const backendSkills = [
   { name: "ASP.NET MVC/.NET Core", percentage: 85 },
-  { name: "SQL/MySQL/DB2", percentage: 80 },
-  { name: "Docker/Azure/AWS", percentage: 75 },
+  { name: "SQL/MySQL/DB2", percentage: 90 },
+  { name: "Docker/Azure/AWS", percentage: 90 },
 ];
 
 const additionalTechnologies = [
