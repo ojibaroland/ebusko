@@ -1,4 +1,4 @@
-import { createContext, useEffect, useRef, useState, ReactNode } from "react";
+import { createContext, useEffect, useRef, useState, ReactNode, useCallback } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 
@@ -19,68 +19,109 @@ interface SmoothScrollProviderProps {
 export const SmoothScrollProvider = ({ children }: SmoothScrollProviderProps) => {
   const [scroll, setScroll] = useState<LocomotiveScroll | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollReady, setScrollReady] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const lastScrollTimeRef = useRef<number>(0);
 
+  // Function to update locomotive scroll
+  const update = useCallback(() => {
+    if (scroll) {
+      scroll.update();
+    }
+  }, [scroll]);
+
+  // Initialize Locomotive Scroll
   useEffect(() => {
     if (!scroll && scrollRef.current) {
       const locomotiveScroll = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
-        multiplier: 1,
-        inertia: 0.09, // Lower values make scrolling smoother
+        smoothMobile: true,
+        multiplier: 0.9,
+        inertia: 0.1,
+        getSpeed: true,
+        getDirection: true,
         smartphone: {
           smooth: true,
         },
         tablet: {
           smooth: true,
         },
-        resetNativeScroll: false, // Set to false to maintain scroll behavior
+        class: "is-inview",
       });
 
-      // Add event listener for scrolling
-      const handleWindowScroll = () => {
+      // Listen to scroll event
+      locomotiveScroll.on('scroll', (instance) => {
+        lastScrollTimeRef.current = Date.now();
+        setIsScrolling(true);
+      });
+
+      // Setup regular updates (regardless of scroll events)
+      intervalRef.current = setInterval(() => {
         locomotiveScroll.update();
-      };
-      window.addEventListener('scroll', handleWindowScroll);
-      
-      // Update locomotive scroll regularly
-      const interval = setInterval(() => {
-        locomotiveScroll.update();
-      }, 500);
+      }, 100);
 
       setScroll(locomotiveScroll);
-      setScrollReady(true);
 
       return () => {
-        clearInterval(interval);
-        window.removeEventListener('scroll', handleWindowScroll);
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+        }
         locomotiveScroll.destroy();
       };
     }
 
     return undefined;
-  }, [scroll]);
+  }, []);
 
-  // Update locomotive scroll on resize
+  // Monitor for scroll events ending
+  useEffect(() => {
+    if (!scroll || !isScrolling) return;
+
+    const checkScrollStopped = () => {
+      const now = Date.now();
+      if (now - lastScrollTimeRef.current > 100) {
+        setIsScrolling(false);
+        // Important: force an update when scrolling stops
+        update();
+      }
+    };
+
+    // Check every 50ms if scrolling has stopped
+    const interval = setInterval(checkScrollStopped, 50);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [scroll, isScrolling, update]);
+
+  // Handle mouse wheel events directly
   useEffect(() => {
     if (!scroll) return;
 
-    const handleResize = () => {
-      scroll.update();
+    const handleWheel = () => {
+      update();
+      lastScrollTimeRef.current = Date.now();
+      setIsScrolling(true);
     };
 
-    window.addEventListener('resize', handleResize);
+    const handleTouchMove = () => {
+      update();
+      lastScrollTimeRef.current = Date.now();
+      setIsScrolling(true);
+    };
+
+    // Listen to DOM events
+    window.addEventListener('wheel', handleWheel, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('resize', update);
+
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('resize', update);
     };
-  }, [scroll]);
-
-  // Create the update function
-  const update = () => {
-    if (scroll) {
-      scroll.update();
-    }
-  };
+  }, [scroll, update]);
 
   return (
     <SmoothScrollContext.Provider value={{ scroll, update }}>
