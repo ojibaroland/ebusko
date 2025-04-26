@@ -25,7 +25,7 @@ export default function Navbar() {
             </h1>
           </div>
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-4">
+            <div className="ml-10 flex items-center space-x-8">
               <a
                 href="#home"
                 className="font-medium hover:text-primary transition-colors"

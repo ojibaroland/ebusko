@@ -14,7 +14,7 @@ export default function Home() {
     // Set document title
     document.title = "Ebuka Ojiba | Full-Stack Developer";
     
-    // Setup smooth scrolling
+    // Setup native smooth scrolling
     document.documentElement.style.scrollBehavior = "smooth";
     
     return () => {

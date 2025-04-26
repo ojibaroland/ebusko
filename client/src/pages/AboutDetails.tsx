@@ -1,8 +1,24 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import PageTransition from "@/components/PageTransition";
+import { useEffect } from "react";
 
 export default function AboutDetails() {
+  useEffect(() => {
+    // Set document title
+    document.title = "About Ebuka Ojiba | Full-Stack Developer";
+    
+    // Setup native smooth scrolling
+    document.documentElement.style.scrollBehavior = "smooth";
+    
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
+    return () => {
+      document.documentElement.style.scrollBehavior = "";
+    };
+  }, []);
+
   return (
     <PageTransition>
       <div className="pt-20 pb-20 min-h-screen bg-gray-50">
