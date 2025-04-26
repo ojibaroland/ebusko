@@ -26,17 +26,10 @@ export default function About() {
           >
             <div className="relative">
               <img
-                src="/assets/images/code-workspace.jpg"
-                alt="Modern workspace"
-                className="rounded-lg shadow-xl w-full"
+                src="/assets/images/ebukaprogramming.jpg"
+                alt="Ebuka programming workspace"
+                className="rounded-lg shadow-xl w-full h-auto object-cover"
               />
-              <div className="absolute -bottom-6 -right-6 bg-white p-3 rounded-lg shadow-lg hidden lg:block">
-                <img
-                  src="/assets/images/coding-close.jpg"
-                  alt="Coding environment"
-                  className="w-32 h-32 object-cover rounded-md"
-                />
-              </div>
             </div>
           </motion.div>
 
