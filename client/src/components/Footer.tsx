@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-dark text-white py-12 relative overflow-hidden">
+    <footer className="bg-neutral-dark text-white py-12 relative overflow-hidden mt-8">
       {/* Animated particles in the background */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
@@ -93,6 +93,13 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
+          <div className="flex flex-wrap justify-center space-x-6 mb-6">
+            <a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a>
+            <a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a>
+            <a href="#skills" className="text-gray-400 hover:text-white transition-colors">Skills</a>
+            <a href="#experience" className="text-gray-400 hover:text-white transition-colors">Experience</a>
+            <a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+          </div>
           <p className="text-gray-400">
             &copy; {new Date().getFullYear()} Ebuka Ojiba. All rights reserved.
           </p>

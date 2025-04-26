@@ -105,10 +105,12 @@ function LayoutContent({ children }: LayoutProps) {
   }, [scroll, scrollDirection, update]);
 
   return (
-    <div className="font-roboto text-neutral-dark bg-neutral-light">
+    <div className="font-roboto text-neutral-dark bg-neutral-light flex flex-col min-h-screen">
       <Navbar />
-      <main data-scroll-section>{children}</main>
-      <Footer />
+      <main data-scroll-section className="flex-grow">{children}</main>
+      <div data-scroll-section>
+        <Footer />
+      </div>
     </div>
   );
 }

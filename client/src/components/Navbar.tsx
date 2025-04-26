@@ -64,7 +64,7 @@ export default function Navbar() {
               </a>
               <a
                 href="#contact"
-                className="px-4 py-2 rounded-md bg-primary text-white hover:bg-secondary transition-colors"
+                className="px-4 py-2 rounded-md bg-primary text-white hover:bg-primary/90 transition-colors"
               >
                 Contact Me
               </a>
@@ -131,7 +131,7 @@ export default function Navbar() {
           </a>
           <a
             href="#contact"
-            className="block px-3 py-2 text-base font-medium bg-primary text-white rounded-md"
+            className="block px-3 py-2 text-base font-medium bg-primary text-white rounded-md hover:bg-primary/90"
             onClick={closeMobileMenu}
           >
             Contact Me
