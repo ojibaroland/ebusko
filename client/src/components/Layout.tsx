@@ -1,12 +1,16 @@
 import { ReactNode, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { SmoothScrollProvider } from "./SmoothScrollContext";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
+function LayoutContent({ children }: LayoutProps) {
+  const { scroll } = useSmoothScroll();
+  
   useEffect(() => {
     // Navbar scroll effect
     const handleScroll = () => {
@@ -22,15 +26,34 @@ export default function Layout({ children }: LayoutProps) {
       }
     };
 
+    // Use both window scroll and locomotive scroll events
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    
+    if (scroll) {
+      scroll.on("scroll", handleScroll);
+    }
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scroll) {
+        scroll.off("scroll", handleScroll);
+      }
+    };
+  }, [scroll]);
 
   return (
     <div className="font-roboto text-neutral-dark bg-neutral-light">
       <Navbar />
-      <main>{children}</main>
+      <main data-scroll-section>{children}</main>
       <Footer />
     </div>
+  );
+}
+
+export default function Layout({ children }: LayoutProps) {
+  return (
+    <SmoothScrollProvider>
+      <LayoutContent>{children}</LayoutContent>
+    </SmoothScrollProvider>
   );
 }
